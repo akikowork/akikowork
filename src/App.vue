@@ -1,43 +1,7 @@
 <script setup>
-import {ref} from 'vue'
-
-const dialogVisible = ref(false)
-
-const handleClose = (done) => {
-  ElMessageBox.confirm('Are you sure to close this dialog?')
-    .then(() => {
-      done()
-    })
-    .catch(() => {
-      // catch error
-    })
-}
-
-document.documentElement.classList.remove('dark');
 </script>
 
 <template>
-  <el-button text @click="dialogVisible = true"
-    >click to open the Dialog</el-button
-  >
-
-  <el-dialog
-    v-model="dialogVisible"
-    title="Tips"
-    width="30%"
-    :before-close="handleClose"
-  >
-    <span>This is a message</span>
-    <template #footer>
-      <span class="dialog-footer">
-        <el-button @click="dialogVisible = false">Cancel</el-button>
-        <el-button type="primary" @click="dialogVisible = false"
-          >Confirm</el-button
-        >
-      </span>
-    </template>
-  </el-dialog>
-
   <div class="emoricontainer dark:bg-zinc-700">
     <div class="w-[100px] rounded-full overflow-hidden shadow-2xl hover:scale-105 transition-all duration-300 ease-in-out">
       <img class="w-[100px]" src="https://emoriko.com/wp-content/uploads/2022/07/mmexport1649751384948.jpg">
@@ -52,5 +16,4 @@ document.documentElement.classList.remove('dark');
     </div>
     </div>
   </div>
-
 </template>
